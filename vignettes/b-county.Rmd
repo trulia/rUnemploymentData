@@ -8,7 +8,7 @@ US County Unemployment Data
 
 ### Data
 
-This package contains a data.frame called `df_county_unemployment` which contains unemployment data on US States from 2000-2014. The data is annualized, which means that there is one data point per state per year:
+This package contains a data.frame called `?df_county_unemployment` which contains unemployment data on US Counties from 2000-2014. The data is annualized, which means that there is one data point per County per year:
 
 ```{r}
 library(rUnemploymentData)
@@ -19,7 +19,7 @@ data(df_county_unemployment)
 head(df_county_unemployment)
 ```
 
-The data was scraped from the US Bureau of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage on January 2, 2014 (http://www.bls.gov/lau/). For the purposes of reproducbility, the scripts which scraped the data also ship with this package - see function `build_county_df` for details.
+The data was scraped from the US Bureau of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage on January 4, 2014 (http://www.bls.gov/lau/) with the function `?build_county_df`.
 
 ### Visualization - Boxplot
 
@@ -55,4 +55,4 @@ A third option for visualizing the data is with an animated choropleth map:
 # animated_county_unemployment_choropleth()
 ```
 
-This function is commented out in the above example because the resulting image cannot render inside a vignette. If you are interested in this visualization, then please type the command locally. Note that it will write files to your local file system - see `choroplethr_animate` in the choroplethr package for details.
+This function is commented out in the above example because the resulting image cannot render inside a vignette. If you are interested in this visualization, then please type the command locally. Note that it will write files to your local file system - see `?choroplethr_animate` in the choroplethr package for details.
