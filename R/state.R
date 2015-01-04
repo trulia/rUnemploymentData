@@ -109,7 +109,7 @@ animated_state_unemployment_choropleth = function()
   frames = list()
   for (i in 2:ncol(df_state_unemployment))
   {
-    year = 2000+i-2
+    year = colnames(df_state_unemployment)[i]
     df = df_state_unemployment[,c(1,i)]
     colnames(df) = c("region", "value")
     frames[[i-1]] = state_choropleth(df, 

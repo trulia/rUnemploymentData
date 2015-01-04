@@ -93,3 +93,25 @@ county_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
   legend = "Unemployment Rate"
   county_choropleth(df, title, legend, buckets, zoom)
 }
+
+#' Create an animated choropleth of US County Unemployment Data
+#' 
+#' Animation is done with the choroplethr_animate function from the choroplethr package.
+#' @export
+#' @importFrom choroplethr county_choropleth choroplethr_animate
+animated_county_unemployment_choropleth = function()
+{
+  data(df_county_unemployment, package="rUnemploymentData", envir=environment())
+  
+  frames = list()
+  for (i in 2:ncol(df_county_unemployment))
+  {
+    year = colnames(df_county_unemployment)[i]
+    df = df_county_unemployment[,c(1,i)]
+    colnames(df) = c("region", "value")
+    frames[[i-1]] = county_choropleth(df, 
+                                      title=paste0("County Unemployment Map: ", year),
+                                      legend = "Unemployment Rate")
+  }
+  choroplethr_animate(frames)
+}
