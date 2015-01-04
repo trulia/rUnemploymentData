@@ -55,4 +55,4 @@ A third option for visualizing the data is with an animated choropleth map:
 # animated_state_unemployment_choropleth()
 ```
 
-This function is commented out in the above example because the resulting image cannot render inside a vignette. If you are interested in this visualization, then please type the command locally.
+This function is commented out in the above example because the resulting image cannot render inside a vignette. If you are interested in this visualization, then please type the command locally. Note that it will write files to your local file system - see `choroplethr_animate` in the choroplethr package for details.

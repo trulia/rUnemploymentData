@@ -17,6 +17,7 @@ must exactly match the names of states as they appear in the "region" column of
 }
 \description{
 Data comes from ?df_county_unemployment. The choropleth is rendered with the function
-?county_choropleth in the choroplethr package.
+?county_choropleth in the choroplethr package. Note that this command will write files to
+your local file system - see ?choroplethr_animate in the choroplethr package for details.
 }
 

@@ -99,7 +99,9 @@ state_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
 
 #' Create an animated choropleth of US State Unemployment Data
 #' 
-#' Animation is done with the choroplethr_animate function from the choroplethr package.
+#' Data comes from ?df_state_unemployment. The choropleth is rendered with the function
+#' ?state_choropleth in the choroplethr package. Note that this command will write files to 
+#' your local file system - see ?choroplethr_animate in the choroplethr package for details.
 #' @export
 #' @importFrom choroplethr state_choropleth choroplethr_animate
 animated_state_unemployment_choropleth = function()

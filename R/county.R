@@ -67,7 +67,8 @@ build_county_df = function()
 #' Render a Choropleth Map of US County Unemployment Rates
 #' 
 #' Data comes from ?df_county_unemployment. The choropleth is rendered with the function
-#' ?county_choropleth in the choroplethr package.
+#' ?county_choropleth in the choroplethr package. Note that this command will write files to 
+#' your local file system - see ?choroplethr_animate in the choroplethr package for details.
 #' 
 #'  @param year The year of data to use. Must be between 1990 and 2013.
 #'  @param buckets The number of equally sized buckets to places the values in. 
