@@ -1,3 +1,7 @@
+if (base::getRversion() >= "2.15.1") {
+  utils::globalVariables(c("df_state_unemployment", "state.regions"))
+}
+
 #' Get state unemployment data from the US Bureau of Labor Statistics (BLS) website
 #' 
 #' This function is included only for reference. Please use the data.frame 
@@ -52,7 +56,7 @@ get_state_unemployment_df = function(year=2013)
 #' @export
 build_state_df = function()
 {
-  data(state.regions, package="choroplethrMaps")
+  data(state.regions, package="choroplethrMaps", envir=environment())
   df_state_unemployment = data.frame(region=state.regions$region)
   for (year in 2000:2013)
   {
@@ -83,7 +87,7 @@ state_unemployment_choropleth = function(year = 2000, buckets = 7, zoom = NULL)
   stopifnot(year >= 2000 && year <= 2013)
   
   # get data into right format for choroplethr
-  data(df_state_unemployment, package="rUnemploymentData")
+  data(df_state_unemployment, package="rUnemploymentData", envir=environment())
   df = df_state_unemployment[, c("region", eval(year))]
   colnames(df) = c("region", "value")  
   
@@ -100,7 +104,7 @@ state_unemployment_choropleth = function(year = 2000, buckets = 7, zoom = NULL)
 #' @importFrom choroplethr state_choropleth choroplethr_animate
 animated_state_unemployment_choropleth = function()
 {
-  data(df_state_unemployment, package="rUnemploymentData")
+  data(df_state_unemployment, package="rUnemploymentData", envir=environment())
   
   frames = list()
   for (i in 2:ncol(df_state_unemployment))

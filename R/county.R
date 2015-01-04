@@ -1,3 +1,7 @@
+if (base::getRversion() >= "2.15.1") {
+  utils::globalVariables(c("df_county_unemployment", "county.regions"))
+}
+
 #' Get county level unemployment data
 #' 
 #' Data is scraped from the US Bureau of Labor Statistics (BSL) webpage. This function is 
@@ -38,7 +42,7 @@ get_county_unemployment_df = function(year)
   df=df[,c("region", "value")]
   
   # now remove unmappable regions
-  data(county.regions, package="choroplethrMaps")
+  data(county.regions, package="choroplethrMaps", envir=environment())
   df = df[df$region %in% county.regions$region,]  
 }
 
@@ -48,7 +52,7 @@ get_county_unemployment_df = function(year)
 #' instead.
 build_county_df = function()
 {
-  data(county.regions, package="choroplethrMaps")
+  data(county.regions, package="choroplethrMaps", envir=environment())
   df_county_unemployment = data.frame(region=county.regions$region)
   for (year in 1990:2013)
   {
