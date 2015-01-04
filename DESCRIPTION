@@ -1,0 +1,16 @@
+Package: rUnemploymentData
+Title: USA State and County Unemployment Data
+Description: Contains data on USA unemployment.
+Version: 1.0.0
+Author: Ari Lamstein <arilamstein@gmail.com>[cre]
+Maintainer: Ari Lamstein <arilamstein@gmail.com>
+Copyright: Trulia, Inc.
+License: BSD_3_clause + file LICENSE
+Imports:
+    stringr,
+    choroplethr,
+    rvest
+Suggests:
+    choroplethrMaps,
+    knitr
+VignetteBuilder: knitr

@@ -1,0 +1,52 @@
+<!--
+%\VignetteEngine{knitr}
+%\VignetteIndexEntry{a) State Unemployment Data}
+-->
+
+Introduction
+========================================================
+
+### Data
+
+This package contains a data.frame called `df_state_unemployment_data` which contains unemployment data on US States from 2000-2014. The data is annualized, which means that there is one data point per State per year:
+
+```{r}
+library(rUnemploymentData)
+
+data(df_state_unemployment)
+?df_state_unemployment
+
+head(df_state_unemployment)
+```
+
+The data was scraped from the US Bureau of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage on January 2, 2014 (http://www.bls.gov/lau/). For the purposes of reproducbility, the scripts which scarped the data also ship with this package - see `?get_state_unemployment_df` and ***TODO FILL IN***.
+
+### Visualization - Boxplot
+
+The easiest way to visualize the entire dataset is with a boxplot. 
+
+```{r}
+?boxplot
+boxplot(df_state_unemployment[, -1],
+        main="USA State Unemployment Data",
+        xlab="Year",
+        ylab="Percent Unemployment")
+```
+
+This visualization shows you, by year, the distribution of the unemployment rate in each state.  For example, the recession that began in 2009 is very clear in this graph. 
+
+### Visualization - Choropleth Map
+
+This package also comes with a function to create choropleth maps of the data:
+
+```{r}
+?state_unemployment_choropleth
+state_unemployment_choropleth(year=2013)
+```
+
+Choropleth maps are useful for understanding the geographic distribution of values. For example, in this map it is clear that the lowest unemployment rates were in the northern central states.
+
+### Visualization - Animated Choropleths
+
+A third option for visualizing the data is with animated choropleth maps. 
+
