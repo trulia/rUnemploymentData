@@ -16,6 +16,10 @@
 #'         main="USA State Unemployment Data",
 #'         xlab="Year", 
 #'         ylab="Percent Unemployment")
+#'         
+#' \dontrun{
+#' state_unemployment_choropleth(year=2013)
+#' }
 NULL
 
 #' A data.frame US County Unemployment Data  
@@ -29,6 +33,7 @@ NULL
 #' @keywords data
 #' @author Ari Lamstein
 #' @examples
+#' 
 #' data(df_county_unemployment)
 #' 
 #' head(df_county_unemployment)
@@ -36,4 +41,8 @@ NULL
 #'         main="USA County Unemployment Data",
 #'         xlab="Year", 
 #'         ylab="Percent Unemployment")
+#'         
+#' \dontrun{
+#' county_unemployment_choropleth(year=2013)
+#' }
 NULL

@@ -18,6 +18,10 @@ boxplot(df_state_unemployment[, -1],
         main="USA State Unemployment Data",
         xlab="Year",
         ylab="Percent Unemployment")
+
+\dontrun{
+state_unemployment_choropleth(year=2013)
+}
 }
 \author{
 Ari Lamstein
