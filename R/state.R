@@ -4,6 +4,7 @@
 #' ?df_state_unemployment instead.
 #' @param year A year (integer) between 2000 and 2013
 #' @importFrom rvest html html_nodes html_text 
+#' @export
 get_state_unemployment_df = function(year=2013)
 {
   stopifnot(is.numeric(year))
@@ -48,6 +49,7 @@ get_state_unemployment_df = function(year=2013)
 #' 
 #' This function is intended for internal use only - please use ?df_state_unemployment 
 #' instead.
+#' @export
 build_state_df = function()
 {
   data(state.regions, package="choroplethrMaps")
@@ -89,4 +91,26 @@ state_unemployment_choropleth = function(year = 2000, buckets = 7, zoom = NULL)
   title  = paste0("State Unemployment Rates: Year ", year)
   legend = "Unemployment Rate"
   state_choropleth(df, title, legend, buckets, zoom)
+}
+
+#' Create an animated choropleth of US State Unemployment Data
+#' 
+#' Animation is done with the choroplethr_animate function from the choroplethr package.
+#' @export
+#' @importFrom choroplethr state_choropleth choroplethr_animate
+animated_state_unemployment_choropleth = function()
+{
+  data(df_state_unemployment, package="rUnemploymentData")
+  
+  frames = list()
+  for (i in 2:ncol(df_state_unemployment))
+  {
+    year = 2000+i-2
+    df = df_state_unemployment[,c(1,i)]
+    colnames(df) = c("region", "value")
+    frames[[i-1]] = state_choropleth(df, 
+                                     title=paste0("State Unemployment Map: ", year),
+                                     legend = "Unemployment Rate")
+  }
+  choroplethr_animate(frames)
 }

@@ -3,7 +3,7 @@
 %\VignetteIndexEntry{a) State Unemployment Data}
 -->
 
-Introduction
+US State Unemployment Data
 ========================================================
 
 ### Data
@@ -19,7 +19,7 @@ data(df_state_unemployment)
 head(df_state_unemployment)
 ```
 
-The data was scraped from the US Bureau of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage on January 2, 2014 (http://www.bls.gov/lau/). For the purposes of reproducbility, the scripts which scarped the data also ship with this package - see `?get_state_unemployment_df` and ***TODO FILL IN***.
+The data was scraped from the US Bureau of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage on January 2, 2014 (http://www.bls.gov/lau/). For the purposes of reproducbility, the scripts which scarped the data also ship with this package - see function `build_state_df` for details.
 
 ### Visualization - Boxplot
 
@@ -48,5 +48,11 @@ Choropleth maps are useful for understanding the geographic distribution of valu
 
 ### Visualization - Animated Choropleths
 
-A third option for visualizing the data is with animated choropleth maps. 
+A third option for visualizing the data is with an animated choropleth map:
 
+```{r}
+?animated_state_unemployment_choropleth
+# animated_state_unemployment_choropleth()
+```
+
+This function is commented out in the above example because the resulting image cannot render inside a vignette. If you are interested in this visualization, then please type the command locally.
