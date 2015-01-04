@@ -13,6 +13,15 @@ To install the package from CRAN type:
 install.packages("rUnemploymentData")
 ```
 
+To install the package from github type:
+
+```
+# install.packages("devtools")
+library(devtools)
+install_github("trulia/rUnemploymentData")
+library(rUnemploymentData)
+```
+
 # State Unemployment Data
 
 The state unemployment data covers 2000-2013 and is in the data.frame `?df_state_unemployment_data`.  Further 
