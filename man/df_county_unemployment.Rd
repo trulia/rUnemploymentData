@@ -14,7 +14,7 @@ of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage: htt
 data(df_county_unemployment)
 
 head(df_county_unemployment)
-boxplot(df_county_unemployment[, -1],
+boxplot(df_county_unemployment[, c(-1, -2, -3)],
         main="USA County Unemployment Data",
         xlab="Year",
         ylab="Percent Unemployment")

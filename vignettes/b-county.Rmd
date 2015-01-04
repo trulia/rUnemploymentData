@@ -27,7 +27,7 @@ The easiest way to visualize the entire dataset is with a boxplot.
 
 ```{r}
 ?boxplot
-boxplot(df_county_unemployment[, -1],
+boxplot(df_county_unemployment[, c(-1, -2, -3)],
         main="USA County Unemployment Data",
         xlab="Year",
         ylab="Percent Unemployment")

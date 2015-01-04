@@ -2,8 +2,10 @@
 
 export(animated_county_unemployment_choropleth)
 export(animated_state_unemployment_choropleth)
+export(build_county_df)
 export(build_state_df)
 export(county_unemployment_choropleth)
+export(get_county_unemployment_df)
 export(get_state_unemployment_df)
 export(state_unemployment_choropleth)
 importFrom(choroplethr,choroplethr_animate)

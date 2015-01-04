@@ -8,6 +8,7 @@ if (base::getRversion() >= "2.15.1") {
 #' intended for internal use only - please use ?df_county_unemployment instead.
 #' @param year The year of the data you want. Must bet between 1990 and 2013
 #' @importFrom stringr str_trim
+#' @export
 get_county_unemployment_df = function(year)
 {
   stopifnot(is.numeric(year))
@@ -50,6 +51,7 @@ get_county_unemployment_df = function(year)
 #' 
 #' This function is intended for internal use only - please use ?df_county_unemployment 
 #' instead.
+#' @export
 build_county_df = function()
 {
   data(county.regions, package="choroplethrMaps", envir=environment())
@@ -60,6 +62,13 @@ build_county_df = function()
     colnames(df) = c("region", eval(year))
     df_county_unemployment = merge(df_county_unemployment, df, all=TRUE)
   }
+  
+  # add in county.name and state.name for clarity
+  county.regions = county.regions[,c("region", "county.name", "state.name")]
+  df_county_unemployment = merge(df_county_unemployment, county.regions)
+  n = ncol(df_county_unemployment)
+  df_county_unemployment = df_county_unemployment[,c(1, n-1, n, 2:(n-2))]
+  
   df_county_unemployment
 }
 
@@ -105,14 +114,13 @@ animated_county_unemployment_choropleth = function()
   data(df_county_unemployment, package="rUnemploymentData", envir=environment())
   
   frames = list()
-  for (i in 2:ncol(df_county_unemployment))
+  for (year in 1990:2013)
   {
-    year = colnames(df_county_unemployment)[i]
-    df = df_county_unemployment[,c(1,i)]
+    df = df_county_unemployment[, c("region", eval(year))]
     colnames(df) = c("region", "value")
-    frames[[i-1]] = county_choropleth(df, 
-                                      title=paste0("County Unemployment Map: ", year),
-                                      legend = "Unemployment Rate")
+    frames[[year-1989]] = county_choropleth(df, 
+                                            title=paste0("County Unemployment Map: ", year),
+                                            legend = "Unemployment Rate")
   }
   choroplethr_animate(frames)
 }

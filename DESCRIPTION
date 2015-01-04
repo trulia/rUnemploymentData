@@ -1,6 +1,12 @@
 Package: rUnemploymentData
 Title: USA State and County Unemployment Data
-Description: Contains data on USA unemployment.
+Description: Contains data and visualization functions for USA unemployment
+    data. Data comes from the US Bureau of Labor Statistics (BLS). State data
+    is in df_state_unemployment and covers 2000-2013. County data is in
+    df_county_unemployment and covers 1990-2013. Choropleth maps of the data
+    can be generated with ?state_unemployment_choropleth and
+    ?county_unemployment_choropleth respectively. See the vignettes for
+    additional information.
 Version: 1.0.0
 Author: Ari Lamstein <arilamstein@gmail.com>[cre]
 Maintainer: Ari Lamstein <arilamstein@gmail.com>
