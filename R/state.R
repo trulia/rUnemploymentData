@@ -67,7 +67,7 @@ build_state_df = function()
   df_state_unemployment
 }
 
-#' Render a State Map of US Unemployment Rates
+#' Render Choropleth Map of US State Unemployment Rates
 #' 
 #' Data comes from ?df_state_unemployment. The choropleth is rendered with the function
 #' ?state_choropleth in the choroplethr package.
@@ -80,7 +80,7 @@ build_state_df = function()
 #'  ?state.regions in the choroplethrMaps package.
 #' @importFrom choroplethr state_choropleth
 #' @export
-state_unemployment_choropleth = function(year = 2000, buckets = 7, zoom = NULL)
+state_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
 {
   # validate input
   stopifnot(is.numeric(year))

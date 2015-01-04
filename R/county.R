@@ -62,3 +62,34 @@ build_county_df = function()
   }
   df_county_unemployment
 }
+
+
+#' Render a Choropleth Map of US County Unemployment Rates
+#' 
+#' Data comes from ?df_county_unemployment. The choropleth is rendered with the function
+#' ?county_choropleth in the choroplethr package.
+#' 
+#'  @param year The year of data to use. Must be between 1990 and 2013.
+#'  @param buckets The number of equally sized buckets to places the values in. 
+#'  A value of 1 will use a continuous scale, and a value in [2, 9] will use that many buckets.
+#'  @param zoom An optional vector of states to zoom in on. Elements of this vector 
+#'  must exactly match the names of states as they appear in the "region" column of 
+#'  ?state.regions in the choroplethrMaps package.
+#' @importFrom choroplethr county_choropleth
+#' @export
+county_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
+{
+  # validate input
+  stopifnot(is.numeric(year))
+  stopifnot(year >= 1990 && year <= 2013)
+  
+  # get data into right format for choroplethr
+  data(df_county_unemployment, package="rUnemploymentData", envir=environment())
+  df = df_county_unemployment[, c("region", eval(year))]
+  colnames(df) = c("region", "value")  
+  
+  # sensible defaults
+  title  = paste0("State Unemployment Rates: Year ", year)
+  legend = "Unemployment Rate"
+  county_choropleth(df, title, legend, buckets, zoom)
+}

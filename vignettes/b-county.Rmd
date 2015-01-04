@@ -1,0 +1,58 @@
+<!--
+%\VignetteEngine{knitr}
+%\VignetteIndexEntry{b) County Unemployment Data}
+-->
+
+US County Unemployment Data
+========================================================
+
+### Data
+
+This package contains a data.frame called `df_county_unemployment` which contains unemployment data on US States from 2000-2014. The data is annualized, which means that there is one data point per State per year:
+
+```{r}
+library(rUnemploymentData)
+
+data(df_county_unemployment)
+?df_county_unemployment
+
+head(df_county_unemployment)
+```
+
+The data was scraped from the US Bureau of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage on January 2, 2014 (http://www.bls.gov/lau/). For the purposes of reproducbility, the scripts which scarped the data also ship with this package - see function `build_county_df` for details.
+
+### Visualization - Boxplot
+
+The easiest way to visualize the entire dataset is with a boxplot. 
+
+```{r}
+?boxplot
+boxplot(df_county_unemployment[, -1],
+        main="USA County Unemployment Data",
+        xlab="Year",
+        ylab="Percent Unemployment")
+```
+
+This visualization shows you, by year, the distribution of the unemployment rate in each county.  For example, the recession that began in 2009 is very clear in this graph. 
+
+### Visualization - Choropleth Map
+
+This package also comes with a function to create choropleth maps of the data:
+
+```{r}
+?county_unemployment_choropleth
+county_unemployment_choropleth(year=2013)
+```
+
+Choropleth maps are useful for understanding the geographic distribution of values. For example, in this map it is clear - with some notable exceptions - in 2013 the unemployment rate was very low in the central part of the US.
+
+### Visualization - Animated Choropleths
+
+A third option for visualizing the data is with an animated choropleth map:
+
+```{r}
+?animated_county_unemployment_choropleth
+# animated_county_unemployment_choropleth()
+```
+
+This function is commented out in the above example because the resulting image cannot render inside a vignette. If you are interested in this visualization, then please type the command locally.
