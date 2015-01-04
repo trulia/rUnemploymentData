@@ -1,4 +1,4 @@
 library(testthat)
 library(rUnemploymentData)
 
-test_package("rUnemploymentData")
+#test_package("rUnemploymentData")
