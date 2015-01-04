@@ -4,8 +4,7 @@ if (base::getRversion() >= "2.15.1") {
 
 #' Get state unemployment data from the US Bureau of Labor Statistics (BLS) website
 #' 
-#' This function is included only for reference. Please use the data.frame 
-#' ?df_state_unemployment instead.
+#' This function is included to allow you to verify the integrity of ?df_state_unemployment.
 #' @param year A year (integer) between 2000 and 2013
 #' @importFrom rvest html html_nodes html_text 
 #' @export
@@ -49,10 +48,10 @@ get_state_unemployment_df = function(year=2013)
   data.frame(region=state_names, value=values)
 }
 
-#' Build the data object df_state_unemployment
+#' Build the data object ?df_state_unemployment
 #' 
-#' This function is intended for internal use only - please use ?df_state_unemployment 
-#' instead.
+#' This function is included to allow you to verify the integrity of ?df_state_unemployment.
+#' This will scrape the Bureau of Labor Statistics Website to get the data.
 #' @export
 build_state_df = function()
 {

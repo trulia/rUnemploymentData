@@ -2,13 +2,14 @@
 \docType{data}
 \name{df_county_unemployment}
 \alias{df_county_unemployment}
-\title{A data.frame US County Unemployment Data}
+\title{A data.frame Containing US County Unemployment Rates}
 \usage{
 data(df_county_unemployment)
 }
 \description{
 Contains annualized data from 1990-2013. Data comes from the US Bureau
 of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage: http://www.bls.gov/lau/.
+The "region" column contains the numeric version of the County FIPS Code.
 }
 \examples{
 data(df_county_unemployment)
@@ -27,7 +28,7 @@ county_unemployment_choropleth(year=2013)
 Ari Lamstein
 }
 \references{
-Created via build_county_df() on January 2, 2014.
+Created via build_county_df() on January 4, 2015.
 }
 \keyword{data}
 

@@ -2,7 +2,7 @@
 \docType{data}
 \name{df_state_unemployment}
 \alias{df_state_unemployment}
-\title{A data.frame US State Unemployment Data}
+\title{A data.frame containing US State Unemployment Rates}
 \usage{
 data(df_state_unemployment)
 }
@@ -27,7 +27,7 @@ state_unemployment_choropleth(year=2013)
 Ari Lamstein
 }
 \references{
-Created via build_state_df() on January 2, 2014.
+Created via build_state_df() on January 4, 2015.
 }
 \keyword{data}
 

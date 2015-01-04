@@ -2,10 +2,10 @@ if (base::getRversion() >= "2.15.1") {
   utils::globalVariables(c("df_county_unemployment", "county.regions"))
 }
 
-#' Get county level unemployment data
+#' Get county level unemployment data from the BLS website
 #' 
-#' Data is scraped from the US Bureau of Labor Statistics (BSL) webpage. This function is 
-#' intended for internal use only - please use ?df_county_unemployment instead.
+#' Data is scraped from the US Bureau of Labor Statistics (BSL) webpage. 
+#' This function is included to allow you to verify the integrity of ?df_county_unemployment.
 #' @param year The year of the data you want. Must bet between 1990 and 2013
 #' @importFrom stringr str_trim
 #' @export
@@ -47,10 +47,10 @@ get_county_unemployment_df = function(year)
   df = df[df$region %in% county.regions$region,]  
 }
 
-#' Build the data object df_county_unemployment
+#' Build the data object ?df_county_unemployment
 #' 
-#' This function is intended for internal use only - please use ?df_county_unemployment 
-#' instead.
+#' This function is included to allow you to verify the integrity of ?df_county_unemployment.
+#' This will scrape the Bureau of Labor Statistics Website to get the data.
 #' @export
 build_county_df = function()
 {
@@ -76,8 +76,7 @@ build_county_df = function()
 #' Render a Choropleth Map of US County Unemployment Rates
 #' 
 #' Data comes from ?df_county_unemployment. The choropleth is rendered with the function
-#' ?county_choropleth in the choroplethr package. Note that this command will write files to 
-#' your local file system - see ?choroplethr_animate in the choroplethr package for details.
+#' ?county_choropleth in the choroplethr package. 
 #' 
 #'  @param year The year of data to use. Must be between 1990 and 2013.
 #'  @param buckets The number of equally sized buckets to places the values in. 
@@ -106,7 +105,9 @@ county_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
 
 #' Create an animated choropleth of US County Unemployment Data
 #' 
-#' Animation is done with the choroplethr_animate function from the choroplethr package.
+#' Data comes from ?df_county_unemployment. The choropleth is rendered with the function
+#' ?state_choropleth in the choroplethr package. Note that this command will write files to 
+#' your local file system - see ?choroplethr_animate in the choroplethr package for details.
 #' @export
 #' @importFrom choroplethr county_choropleth choroplethr_animate
 animated_county_unemployment_choropleth = function()

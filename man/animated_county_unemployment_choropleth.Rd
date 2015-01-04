@@ -6,6 +6,8 @@
 animated_county_unemployment_choropleth()
 }
 \description{
-Animation is done with the choroplethr_animate function from the choroplethr package.
+Data comes from ?df_county_unemployment. The choropleth is rendered with the function
+?state_choropleth in the choroplethr package. Note that this command will write files to
+your local file system - see ?choroplethr_animate in the choroplethr package for details.
 }
 

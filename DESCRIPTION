@@ -1,5 +1,5 @@
 Package: rUnemploymentData
-Title: USA State and County Unemployment Data
+Title: Data and Functions for USA State and County Unemployment Data
 Description: Contains data and visualization functions for USA unemployment
     data. Data comes from the US Bureau of Labor Statistics (BLS). State data
     is in df_state_unemployment and covers 2000-2013. County data is in

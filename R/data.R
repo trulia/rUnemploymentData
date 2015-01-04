@@ -1,11 +1,11 @@
-#' A data.frame US State Unemployment Data  
+#' A data.frame containing US State Unemployment Rates  
 #'
 #' Contains annualized data from 2000-2013. Data comes from the US Bureau
 #' of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage: http://www.bls.gov/lau/.
 #' @name df_state_unemployment
 #' @usage data(df_state_unemployment)
 #' @docType data
-#' @references Created via build_state_df() on January 2, 2014.
+#' @references Created via build_state_df() on January 4, 2015.
 #' @keywords data
 #' @author Ari Lamstein
 #' @examples
@@ -22,14 +22,15 @@
 #' }
 NULL
 
-#' A data.frame US County Unemployment Data  
+#' A data.frame Containing US County Unemployment Rates  
 #'
 #' Contains annualized data from 1990-2013. Data comes from the US Bureau
 #' of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS) webpage: http://www.bls.gov/lau/.
+#' The "region" column contains the numeric version of the County FIPS Code.
 #' @name df_county_unemployment
 #' @usage data(df_county_unemployment)
 #' @docType data
-#' @references Created via build_county_df() on January 2, 2014.
+#' @references Created via build_county_df() on January 4, 2015.
 #' @keywords data
 #' @author Ari Lamstein
 #' @examples

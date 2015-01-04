@@ -9,7 +9,6 @@ get_state_unemployment_df(year = 2013)
 \item{year}{A year (integer) between 2000 and 2013}
 }
 \description{
-This function is included only for reference. Please use the data.frame
-?df_state_unemployment instead.
+This function is included to allow you to verify the integrity of ?df_state_unemployment.
 }
 
