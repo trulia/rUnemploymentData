@@ -10,6 +10,9 @@ Description: Contains data and visualization functions for USA unemployment
 Version: 1.0.0
 Author: Ari Lamstein <arilamstein@gmail.com>[cre]
 Maintainer: Ari Lamstein <arilamstein@gmail.com>
+URL: https://github.com/trulia/rUnemploymentData/,
+    https://groups.google.com/forum/#!forum/choroplethr
+BugReports: https://github.com/trulia/choroplethr/issues
 Copyright: Trulia, Inc.
 License: BSD_3_clause + file LICENSE
 Imports:
