@@ -31,3 +31,7 @@ information can be found in the vignette [US State Unemployment Data](http://cra
 
 The county unemployment data covers 1990-2013 and is in the data.frame `?df_county_unemployment_data`.  Further 
 information can be found in the vignette [US County Unemployment Data](http://cran.r-project.org/web/packages/rUnemploymentData/vignettes/b-county.html).
+
+# Reproducibility
+
+The data in this package was scraped from the BLS website on January 4, 2014. The scripts which scraped the data are available in `get_state_unemployment_df` and `get_county_unemployment_df`.
